@@ -65,8 +65,7 @@ fclean : clean
 clean :
 	rm -f $(OBJECTS) $(DEP)
 
-re : 
-	fclean all
+re : fclean all
 
 .PHONY: all re clean fclean
 
