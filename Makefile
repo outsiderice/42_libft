@@ -6,7 +6,7 @@
 #    By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 19:17:38 by amagnell          #+#    #+#              #
-#    Updated: 2022/12/03 18:17:09 by amagnell         ###   ########.fr        #
+#    Updated: 2023/09/17 14:56:46 by amagnell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,24 +49,32 @@ SOURCES =  ft_isalpha.c \
 		   ft_itoa.c \
 		   ft_split.c
 
-OBJECTS = $(SOURCES:.c=.o) 
+BONUS_SOURCES = ft_lstnew.c
+
+OBJECTS = $(SOURCES:.c=.o)
+
+BONUS_OBJ = $(BONUS_SOURCES:.c=.o)
 
 DEP = $(SOURCES:.c=.d)
+
+BONUS_DEP = $(BONUS_SOURCES:.c=.d)
 
 $(NAME) : $(OBJECTS)
 	ar -rsc $@ $(OBJECTS)
 
-
+bonus: $(BONUS) $(BONUS_OBJ)
+	ar -rsc $(NAME) $^
+	
 all : $(NAME)
 
 fclean : clean
 	rm -f $(NAME)
 
 clean :
-	rm -f $(OBJECTS) $(DEP)
+	rm -f $(OBJECTS) $(BONUS_OBJ) $(DEP) $(BONUS_DEP)
 
 re : fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean bonus
 
--include $(DEP) 
+-include $(DEP) $(BONUS_DEP) 
