@@ -6,7 +6,7 @@
 /*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:14:08 by amagnell          #+#    #+#             */
-/*   Updated: 2023/09/17 16:18:16 by amagnell         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:09:40 by amagnell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,11 @@ char	*ft_itoa(int n);
 
 char	**ft_split(char const *s, char c);
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+t_list	*ft_lstnew(void *content);
 #endif
