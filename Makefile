@@ -6,7 +6,7 @@
 #    By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 19:17:38 by amagnell          #+#    #+#              #
-#    Updated: 2023/09/17 14:56:46 by amagnell         ###   ########.fr        #
+#    Updated: 2023/09/23 13:50:37 by amagnell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,11 @@ SOURCES =  ft_isalpha.c \
 		   ft_itoa.c \
 		   ft_split.c
 
-BONUS_SOURCES = ft_lstnew.c
+BONUS_SOURCES = ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
