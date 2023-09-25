@@ -6,7 +6,7 @@
 #    By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 19:17:38 by amagnell          #+#    #+#              #
-#    Updated: 2023/09/23 13:50:37 by amagnell         ###   ########.fr        #
+#    Updated: 2023/09/25 19:18:44 by amagnell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,11 @@ BONUS_SOURCES = ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
-				ft_lstadd_back.c
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
