@@ -3,86 +3,112 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+         #
+#    By: amagnell <amagnell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/16 19:17:38 by amagnell          #+#    #+#              #
-#    Updated: 2023/09/25 19:18:44 by amagnell         ###   ########.fr        #
+#    Created: 2023/12/07 18:06:24 by amagnell          #+#    #+#              #
+#    Updated: 2023/12/08 21:01:39 by amagnell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -MD
-INCLUDE = libft.h
-SOURCES =  ft_isalpha.c \
-		   ft_isdigit.c \
-		   ft_isalnum.c \
-		   ft_isascii.c \
-		   ft_isprint.c \
-		   ft_strlen.c \
-		   ft_memset.c \
-		   ft_bzero.c \
-		   ft_memcpy.c \
-		   ft_memmove.c \
-		   ft_strlcpy.c \
-		   ft_strlcat.c \
-		   ft_toupper.c \
-		   ft_tolower.c \
-		   ft_strchr.c \
-		   ft_strrchr.c\
-		   ft_strncmp.c\
-		   ft_memchr.c \
-		   ft_memcmp.c \
-		   ft_strnstr.c \
-		   ft_atoi.c \
-		   ft_calloc.c \
-		   ft_strdup.c \
-		   ft_substr.c \
-		   ft_strjoin.c \
-		   ft_strtrim.c \
-		   ft_putchar_fd.c \
-		   ft_putstr_fd.c \
-		   ft_putendl_fd.c \
-		   ft_putnbr_fd.c \
-		   ft_striteri.c \
-		   ft_strmapi.c \
-		   ft_itoa.c \
-		   ft_split.c
+#-------------------------------------------#
+#	TARGET									#
+#-------------------------------------------#
+NAME := libft.a
 
-BONUS_SOURCES = ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c
+#-------------------------------------------#
+#	INGREDIENTS								#
+#-------------------------------------------#
+SRC_DIR 	:=	src
+SRCS 		:=	src/ft_isalpha.c \
+				src/ft_isdigit.c \
+				src/ft_isalnum.c \
+				src/ft_isascii.c \
+				src/ft_isprint.c \
+				src/ft_strlen.c \
+				src/ft_memset.c \
+				src/ft_bzero.c \
+				src/ft_memcpy.c \
+				src/ft_memmove.c \
+				src/ft_strlcpy.c \
+				src/ft_strlcat.c \
+				src/ft_toupper.c \
+				src/ft_tolower.c \
+				src/ft_strchr.c \
+				src/ft_strrchr.c\
+				src/ft_strncmp.c\
+				src/ft_memchr.c \
+				src/ft_memcmp.c \
+				src/ft_strnstr.c \
+				src/ft_atoi.c \
+				src/ft_calloc.c \
+				src/ft_strdup.c \
+				src/ft_substr.c \
+				src/ft_strjoin.c \
+				src/ft_strtrim.c \
+				src/ft_putchar_fd.c \
+				src/ft_putstr_fd.c \
+				src/ft_putendl_fd.c \
+				src/ft_putnbr_fd.c \
+				src/ft_striteri.c \
+				src/ft_strmapi.c \
+				src/ft_itoa.c \
+				src/ft_split.c \
+				src/ft_printf.c \
+				src/ft_nbrs.c \
+				src/ft_putchar.c \
+				src/ft_putnbr.c \
+				src/ft_putptr.c \
+				src/ft_putstr.c \
+				src/ft_putunbr.c \
+				src/ft_sort_format.c
+# SRCS 		:= $(SRC_DIR)/%.c
 
-OBJECTS = $(SOURCES:.c=.o)
+BUILD_DIR 	:= .build
+OBJS 		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+DEPS 		:= $(OBJS:%.o=%.d)
 
-BONUS_OBJ = $(BONUS_SOURCES:.c=.o)
+CC  		:= clang
+CFLAGS 		:= -Wall -Wextra -Werror
+CPPFLAGS 	:= -MMD -MP -I include
+AR 			:= ar
+ARFLAGS		:= -r -c -s
 
-DEP = $(SOURCES:.c=.d)
+#-------------------------------------------#
+#	UTILS									#
+#-------------------------------------------#
+RM := rm -f
+MAKEFLAGS += --no-print-directory
+DIR_DUP =  mkdir -p $(@D)
 
-BONUS_DEP = $(BONUS_SOURCES:.c=.d)
+#-------------------------------------------#
+#	RECIPES									#
+#-------------------------------------------#
+all: $(NAME)
 
-$(NAME) : $(OBJECTS)
-	ar -rsc $@ $(OBJECTS)
-
-bonus: $(BONUS) $(BONUS_OBJ)
-	ar -rsc $(NAME) $^
+$(NAME): $(OBJS) 
+	$(AR) $(ARFLAGS) $@ $(OBJS)
+	$(info Created $(NAME))
 	
-all : $(NAME)
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	$(call DIR_DUP,$(@D))
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+	$(info Created $@)
 
-fclean : clean
-	rm -f $(NAME)
+-include $(DEPS)
 
-clean :
-	rm -f $(OBJECTS) $(BONUS_OBJ) $(DEP) $(BONUS_DEP)
+clean:
+	$(RM) $(OBJS) $(DEPS)
 
-re : fclean all
+fclean: clean
+	$(RM) $(NAME)
 
-.PHONY: all re clean fclean bonus
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 
--include $(DEP) $(BONUS_DEP) 
+#-------------------------------------------#
+#	SPECIAL RULES							#
+#-------------------------------------------#
+
+.PHONY: all re clean fclean
+.SILENT:
