@@ -92,7 +92,6 @@ $(NAME): $(OBJS)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(call DIR_DUP,$(@D))
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
-	$(info Created $@)
 
 -include $(DEPS)
 
