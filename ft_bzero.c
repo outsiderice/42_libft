@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//Writes 0s to n bytes of string pointed by s.
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
