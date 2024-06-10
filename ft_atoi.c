@@ -12,9 +12,8 @@
 
 #include "libft.h"
 
-//converts numbers contained in inital part of the string pointed by str to int
-//returns 0 if it can't. it allows one use of + or - before the number. 
-
+//Converts numbers contained in inital part of the string pointed by str to int
+//returns 0 if it can't. It allows one use of + or - before the number. 
 int	ft_atoi(const char *str)
 {
 	int	i;
