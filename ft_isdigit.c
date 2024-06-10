@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:45:28 by amagnell          #+#    #+#             */
-/*   Updated: 2022/10/08 15:47:40 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/10 09:03:44 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// checks if parameter int c is a decimal digit, 0 to 9. 
+// Checks if parameter int c is a decimal digit, 0 to 9. 
 // Returns 0 if false and 1 if true.
-
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

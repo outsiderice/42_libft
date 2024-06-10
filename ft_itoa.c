@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:24:40 by amagnell          #+#    #+#             */
-/*   Updated: 2022/11/19 16:20:03 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/10 09:08:28 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//returns a string representing int n or NULL if it fails.
 
 size_t	nbr_chr(long n, size_t i)
 {
@@ -45,6 +43,7 @@ static char	*itob(long n, char *str, size_t len)
 	return (str);
 }
 
+// Returns a string representing int n or NULL if it fails.
 char	*ft_itoa(int n)
 {
 	char	*str;

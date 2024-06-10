@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:30:57 by amagnell          #+#    #+#             */
-/*   Updated: 2022/10/08 16:48:27 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/10 09:04:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//checks if parameter int c is an ASCII character, 0 to octal 0177
-//returns 0 if false and 1 if true
-
+// Checks if int c is an ASCII character, 0 to octal 0177
+// Returns 0 if false and 1 if true
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

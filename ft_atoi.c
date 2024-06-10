@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:18:19 by amagnell          #+#    #+#             */
-/*   Updated: 2022/10/28 12:18:15 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/10 09:05:47 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Converts numbers contained in inital part of the string pointed by str to int
-//returns 0 if it can't. It allows one use of + or - before the number. 
+// Converts numbers contained in inital part of the string pointed by str to int
+// Returns 0 if it can't. It allows one use of + or - before the number. 
 int	ft_atoi(const char *str)
 {
 	int	i;

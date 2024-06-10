@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:38:25 by amagnell          #+#    #+#             */
-/*   Updated: 2022/10/08 18:07:44 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/10 09:07:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Checks if int c is a printable character, including space.
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
