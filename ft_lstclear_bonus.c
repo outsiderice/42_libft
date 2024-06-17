@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amagnell <amagnell@student.42barcel>       +#+  +:+       +#+        */
+/*   By: amagnell <amagnell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:33:52 by amagnell          #+#    #+#             */
-/*   Updated: 2023/09/25 19:05:50 by amagnell         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:53:07 by amagnell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// deletes LST node by node using DEL
 void	ft_lstclear(t_list **lst, void (*del) (void *))
 {
 	t_list	*node;

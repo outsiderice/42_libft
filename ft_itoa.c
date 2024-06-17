@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amagnell <amagnell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:24:40 by amagnell          #+#    #+#             */
-/*   Updated: 2024/06/10 09:08:28 by codespace        ###   ########.fr       */
+/*   Updated: 2024/06/17 10:49:07 by amagnell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Function which counts and returns the number of digits n has
 size_t	nbr_chr(long n, size_t i)
 {
 	if (n < 0)
@@ -29,6 +30,7 @@ size_t	nbr_chr(long n, size_t i)
 	return (i);
 }
 
+// 	Null terminates the string and fills the string from end to start
 static char	*itob(long n, char *str, size_t len)
 {
 	str[len] = '\0';
