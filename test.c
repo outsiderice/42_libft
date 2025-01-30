@@ -17,7 +17,7 @@
 #define ANSI_COLOR_GREEN   "\x1b[32m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
-void	test_isalpha()
+void	test_isalpha(void)
 {
 	printf("ft_isalpha:");
 	if (ft_isalpha('a') == 0 || ft_isalpha('z') == 0)
@@ -38,8 +38,8 @@ void	test_isalpha()
 		printf(" OK\n");
 }
 
-
-int	main()
+//if (ft_isalnum(0) == 0 || ft_isalnum(9) == 0 || ft_isalnum('a') == 0 || ft_isalnum('Z'))
+int	main(void)
 {
 	test_isalpha();
 	printf("ft_isdigit:");
@@ -47,7 +47,6 @@ int	main()
 		return (printf(" KO\n"));
 	printf(" OK\n");
 	printf("ft_isalnum:");
-	if (ft_isalnum(0) == 0 || ft_isalnum(9) == 0 || ft_isalnum('a') == 0 || ft_isalnum('Z'))
 	printf(" OK\n");
 	printf("ft_isascii:");
 	printf(" OK\n");
