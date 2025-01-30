@@ -38,7 +38,8 @@ void	test_isalpha(void)
 		printf(" OK\n");
 }
 
-//if (ft_isalnum(0) == 0 || ft_isalnum(9) == 0 || ft_isalnum('a') == 0 || ft_isalnum('Z'))
+//if (ft_isalnum(0) == 0 || ft_isalnum(9) == 0 || 
+//ft_isalnum('a') == 0 || ft_isalnum('Z'))
 int	main(void)
 {
 	test_isalpha();
